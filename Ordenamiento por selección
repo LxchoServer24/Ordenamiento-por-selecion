@@ -1,0 +1,34 @@
+//ordenacion por seleccion
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+	int vector[5]={99,88,2,5,0};
+	int min,aux;
+	printf("\n--------------------------------\n");
+	printf("vector:\n");
+	for(int k=0;k<5;k++){
+		printf("[%i]",vector[k]);
+	}
+	for(int i=0;i<5;i++){
+		min=i;
+		for(int j=i+1;j<5;j++){
+			if(vector[j]<vector[min]){
+				min=j;
+			}
+		}
+		aux=vector[i];
+		vector[i]=vector[min];
+		vector[min]=aux;
+	}
+	printf("\n---------------------------------\n");
+	printf("Orden Ascendente\n");
+	for(int k=0;k<5;k++){
+		printf("[%i]",vector[k]);
+	}
+	printf("\n---------------------------------\n");
+	printf("Orden Descendente\n");
+	for(int k=4;k>=0;k--){
+		printf("[%i]",vector[k]);
+	}
+	return 0;
+}
